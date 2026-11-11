@@ -4,7 +4,7 @@ An ebook library and reader for **EPUB, PDF and TXT** with a clean, quiet readin
 browser: a Chromium extension and a Firefox add-on on desktop, and an installable web app (PWA) on phones. No accounts, server, or dependencies to build.
 Everything is stored privately in your browser unless you turn on sync.
 
-**Quick links:** [Download the extension (ZIP)](https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip) | [Firefox add-on (ZIP)](https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-firefox.zip) | [Open the web app](https://etrntyy.github.io/FolioReader/) | [Installation guide](INSTALL.md) | [Releases](https://github.com/etrntyy/FolioReader/releases)
+**Quick links:** [Download the extension (ZIP)](https://github.com/etrntyy/Folio/releases/latest/download/Folio-extension.zip) | [Firefox add-on (ZIP)](https://github.com/etrntyy/Folio/releases/latest/download/Folio-firefox.zip) | [Open the web app](https://etrntyy.github.io/Folio/) | [Installation guide](INSTALL.md) | [Releases](https://github.com/etrntyy/Folio/releases)
 
 ## Features
 
@@ -41,9 +41,9 @@ Full, step-by-step guides for every browser and device are in **[INSTALL.md](INS
 
 | Device | How |
 |---|---|
-| Chrome, Edge, Brave, Opera, Vivaldi, Arc (desktop) | Download the [latest release ZIP](https://github.com/etrntyy/FolioReader/releases/latest), extract it, open the browser's extensions page, turn on **Developer mode**, click **Load unpacked** and pick the folder. [Details](INSTALL.md#desktop-extension-chromium-browsers) |
-| Firefox (desktop) | Download the [Firefox add-on](https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-firefox.zip) and load it (temporary) or install it signed or unsigned. [Details](INSTALL.md#firefox-extension) |
-| Safari (desktop), or no extension wanted | Open **https://etrntyy.github.io/FolioReader/** and optionally install it as an app. [Details](INSTALL.md#web-app-on-a-computer) |
+| Chrome, Edge, Brave, Opera, Vivaldi, Arc (desktop) | Download the [latest release ZIP](https://github.com/etrntyy/Folio/releases/latest), extract it, open the browser's extensions page, turn on **Developer mode**, click **Load unpacked** and pick the folder. [Details](INSTALL.md#desktop-extension-chromium-browsers) |
+| Firefox (desktop) | Download the [Firefox add-on](https://github.com/etrntyy/Folio/releases/latest/download/Folio-firefox.zip) and load it (temporary) or install it signed or unsigned. [Details](INSTALL.md#firefox-extension) |
+| Safari (desktop), or no extension wanted | Open **https://etrntyy.github.io/Folio/** and optionally install it as an app. [Details](INSTALL.md#web-app-on-a-computer) |
 | Android | Open the web app address in Chrome, then menu > **Add to Home screen**. [Details](INSTALL.md#android) |
 | iPhone / iPad | Open the web app address in Safari, then Share > **Add to Home Screen**. [Details](INSTALL.md#iphone-and-ipad) |
 
@@ -97,7 +97,7 @@ npm config set @etrntyy:registry https://npm.pkg.github.com
 npm install @etrntyy/folioreader
 ```
 
-Most people should use the [release ZIP](https://github.com/etrntyy/FolioReader/releases/latest) or the [web app](https://etrntyy.github.io/FolioReader/) instead.
+Most people should use the [release ZIP](https://github.com/etrntyy/Folio/releases/latest) or the [web app](https://etrntyy.github.io/Folio/) instead.
 
 ## Support
 Folio is free and open source. If you find it useful, you can [buy me a coffee](https://buymeacoffee.com/etrntyy) (optional).

@@ -11,7 +11,7 @@
 import * as db from './db.js';
 import { lsGet, lsSet } from './ui.js';
 
-export const REPO = 'etrntyy/FolioReader';
+export const REPO = 'etrntyy/Folio';
 export const BRANCH = 'main';
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/`;
 export const isExtension = !!globalThis.chrome?.runtime?.id;

@@ -4,8 +4,8 @@
   "description": "Folio: an ebook library and reader for EPUB, PDF and TXT. The static web app and Chromium extension files, ready to host or load unpacked.",
   "main": "app.html",
   "keywords": ["ebook", "epub", "pdf", "reader", "chrome-extension", "pwa", "library"],
-  "homepage": "https://etrntyy.github.io/FolioReader/",
-  "bugs": { "url": "https://github.com/etrntyy/FolioReader/issues" },
-  "repository": { "type": "git", "url": "git+https://github.com/etrntyy/FolioReader.git" },
+  "homepage": "https://etrntyy.github.io/Folio/",
+  "bugs": { "url": "https://github.com/etrntyy/Folio/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/etrntyy/Folio.git" },
   "publishConfig": { "registry": "https://npm.pkg.github.com" }
 }

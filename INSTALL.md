@@ -6,12 +6,12 @@
 
 | What | Link |
 |---|---|
-| **Download the desktop extension (ZIP)** | https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip |
-| **Download the Firefox add-on (ZIP)** | https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-firefox.zip |
-| **Open the web app** (phones, tablets, any browser) | https://etrntyy.github.io/FolioReader/ |
-| All releases and release notes | https://github.com/etrntyy/FolioReader/releases |
-| Source code (ZIP) | https://github.com/etrntyy/FolioReader/archive/refs/heads/main.zip |
-| Project page and README | https://github.com/etrntyy/FolioReader |
+| **Download the desktop extension (ZIP)** | https://github.com/etrntyy/Folio/releases/latest/download/Folio-extension.zip |
+| **Download the Firefox add-on (ZIP)** | https://github.com/etrntyy/Folio/releases/latest/download/Folio-firefox.zip |
+| **Open the web app** (phones, tablets, any browser) | https://etrntyy.github.io/Folio/ |
+| All releases and release notes | https://github.com/etrntyy/Folio/releases |
+| Source code (ZIP) | https://github.com/etrntyy/Folio/archive/refs/heads/main.zip |
+| Project page and README | https://github.com/etrntyy/Folio |
 
 Folio runs in two ways. Pick the one that fits your device.
 | You want to use Folio on... | Use this | Section |
@@ -40,19 +40,19 @@ Works in Google Chrome, Microsoft Edge, Brave, Opera, Vivaldi and Arc. It does *
 Choose one:
 
 **A. Download the release ZIP (easiest)**
-1. Click this direct download link: https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip
-   (It always gives the newest version. All releases are listed at https://github.com/etrntyy/FolioReader/releases)
+1. Click this direct download link: https://github.com/etrntyy/Folio/releases/latest/download/Folio-extension.zip
+   (It always gives the newest version. All releases are listed at https://github.com/etrntyy/Folio/releases)
 2. Save the file (about 0.5 MB).
 3. Right-click the downloaded ZIP and **Extract All** (Windows) or double-click it (Mac). Do not open it from inside the ZIP viewer.
 4. Move the extracted folder somewhere permanent, for example `Documents/Folio`. The folder you pick must
    contain a file named `manifest.json` directly inside it.
 
 **B. Without a release: the source ZIP**
-Open https://github.com/etrntyy/FolioReader/archive/refs/heads/main.zip to download the latest source, then extract it. (Or open https://github.com/etrntyy/FolioReader, click the green **Code** button, then **Download ZIP**.)
+Open https://github.com/etrntyy/Folio/archive/refs/heads/main.zip to download the latest source, then extract it. (Or open https://github.com/etrntyy/Folio, click the green **Code** button, then **Download ZIP**.)
 
 **C. With Git**
 ```bash
-git clone https://github.com/etrntyy/FolioReader.git
+git clone https://github.com/etrntyy/Folio.git
 ```
 
 > Do not delete or move this folder afterwards. The browser runs Folio straight from it.
@@ -126,7 +126,7 @@ extension. Export a backup first (**... menu > Export library data**) if you wan
 Firefox does not run the Chromium package, so Folio has a separate Firefox build with the same features.
 It needs **Firefox 128 or newer** on a computer.
 
-**Download:** https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-firefox.zip
+**Download:** https://github.com/etrntyy/Folio/releases/latest/download/Folio-firefox.zip
 (the same file is also attached as `Folio-firefox.xpi`; an .xpi is just a zip with another name)
 
 Firefox only keeps add-ons that Mozilla has signed, and Folio is not listed on addons.mozilla.org yet. Pick the
@@ -158,7 +158,7 @@ You repeat step 3 for each new version, because Firefox cannot update unlisted a
 
 ### Firefox on Android
 Firefox for Android only installs add-ons from Mozilla's approved list, so use the
-[web app](#android) instead: open https://etrntyy.github.io/FolioReader/ and choose menu > **Install**.
+[web app](#android) instead: open https://etrntyy.github.io/Folio/ and choose menu > **Install**.
 
 ### Notes for the Firefox add-on
 - **Updates:** Firefox cannot replace an installed add-on's files by itself, so on the **About & updates** page the
@@ -170,8 +170,8 @@ Firefox for Android only installs add-ons from Mozilla's approved list, so use t
 
 ### Building the Firefox package yourself
 ```powershell
-git clone https://github.com/etrntyy/FolioReader.git
-cd FolioReader
+git clone https://github.com/etrntyy/Folio.git
+cd Folio
 powershell -ExecutionPolicy Bypass -File scripts\build-firefox.ps1
 ```
 This writes `dist/Folio-firefox.zip` and `dist/Folio-firefox.xpi`. (Without PowerShell: copy
@@ -183,7 +183,7 @@ This writes `dist/Folio-firefox.zip` and `dist/Folio-firefox.xpi`. (Without Powe
 ## Web app on a computer
 Use this on Firefox or Safari, or if you prefer not to load an extension. It works in any modern browser.
 
-1. Open **https://etrntyy.github.io/FolioReader/** (direct link: [open Folio](https://etrntyy.github.io/FolioReader/))
+1. Open **https://etrntyy.github.io/Folio/** (direct link: [open Folio](https://etrntyy.github.io/Folio/))
 2. Optional: install it as an app so it gets its own window and works offline.
    - **Chrome:** click the install icon at the right end of the address bar, or menu (three dots) >
      **Cast, save and share** > **Install page as app**.
@@ -200,7 +200,7 @@ separate from any extension install.
 
 ## Android
 
-1. Open **https://etrntyy.github.io/FolioReader/** in your browser (direct link: [open Folio](https://etrntyy.github.io/FolioReader/)).
+1. Open **https://etrntyy.github.io/Folio/** in your browser (direct link: [open Folio](https://etrntyy.github.io/Folio/)).
 2. Add it to your home screen:
    - **Chrome:** menu (three dots) > **Add to Home screen** (or **Install app**) > **Install**.
    - **Samsung Internet:** menu > **Add page to** > **Home screen**.
@@ -216,7 +216,7 @@ turn pages, and long-press a word to highlight.
 
 Use **Safari** (other iOS browsers cannot add web apps to the home screen).
 
-1. Open **https://etrntyy.github.io/FolioReader/** in Safari (direct link: [open Folio](https://etrntyy.github.io/FolioReader/)).
+1. Open **https://etrntyy.github.io/Folio/** in Safari (direct link: [open Folio](https://etrntyy.github.io/Folio/)).
 2. Tap the **Share** button (square with an arrow).
 3. Scroll down and tap **Add to Home Screen**, then **Add**.
 4. Open Folio from the new home-screen icon, not from Safari.
@@ -257,4 +257,4 @@ on the About & updates page.
 
 ---
 
-[Back to the README](README.md) | [All releases](https://github.com/etrntyy/FolioReader/releases) | [Open the web app](https://etrntyy.github.io/FolioReader/)
+[Back to the README](README.md) | [All releases](https://github.com/etrntyy/Folio/releases) | [Open the web app](https://etrntyy.github.io/Folio/)
