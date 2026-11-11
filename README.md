@@ -88,6 +88,16 @@ icons/                 app icons
 PDF rendering uses [pdf.js](https://github.com/mozilla/pdf.js) (Apache-2.0), bundled in `lib/`.
 The cover placeholder and UI use system fonts only.
 
+## Package
+Folio is also published as an npm package on GitHub Packages (@etrntyy/folioreader) containing the static files, for people who want to host their own copy. GitHub Packages needs a token to install, even for public packages:
+
+```
+npm config set @etrntyy:registry https://npm.pkg.github.com
+npm install @etrntyy/folioreader
+```
+
+Most people should use the [release ZIP](https://github.com/etrntyy/FolioReader/releases/latest) or the [web app](https://etrntyy.github.io/FolioReader/) instead.
+
 ## Support
 Folio is free and open source. If you find it useful, you can [buy me a coffee](https://buymeacoffee.com/etrntyy) (optional).
 
