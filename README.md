@@ -103,7 +103,6 @@ Most people should use the [release ZIP](https://github.com/etrntyy/FolioReader/
 Folio is free and open source. If you find it useful, you can [buy me a coffee](https://buymeacoffee.com/etrntyy) (optional).
 
 ## Status
-Tested in a Chromium browser pane at desktop and phone sizes, and against a Nextcloud-style WebDAV server. Not yet
-tested on real phones or in every browser listed above (the steps follow each browser's standard extension and
-home-screen flows), and the Google Drive, Dropbox and OneDrive sign-in flows have not been tried against real
-accounts.
+- **Chromium extension and web app:** tested in a Chromium browser pane at desktop and phone sizes, and against a Nextcloud-style WebDAV server.
+- **Firefox add-on:** tested in Firefox 160 on Windows as a temporary add-on: it loads, imports and reads EPUBs, renders PDFs, saves bookmarks and progress, runs the update check, and shows the Download button instead of self-update. Not yet tested: the toolbar button, Firefox for Android, or a Mozilla-signed install.
+- **Not yet tested:** real phones, the other browsers listed in INSTALL.md (the steps follow each browser's standard flow), and the Google Drive, Dropbox and OneDrive sign-in flows against real accounts.
