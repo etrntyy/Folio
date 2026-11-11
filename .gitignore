@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 _t.*
 _test.*
+dist/

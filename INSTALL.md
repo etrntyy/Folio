@@ -7,6 +7,7 @@
 | What | Link |
 |---|---|
 | **Download the desktop extension (ZIP)** | https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip |
+| **Download the Firefox add-on (ZIP)** | https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-firefox.zip |
 | **Open the web app** (phones, tablets, any browser) | https://etrntyy.github.io/FolioReader/ |
 | All releases and release notes | https://github.com/etrntyy/FolioReader/releases |
 | Source code (ZIP) | https://github.com/etrntyy/FolioReader/archive/refs/heads/main.zip |
@@ -16,7 +17,8 @@ Folio runs in two ways. Pick the one that fits your device.
 | You want to use Folio on... | Use this | Section |
 |---|---|---|
 | Desktop Chrome, Edge, Brave, Opera, Vivaldi, Arc (any Chromium browser) | The browser extension | [Desktop extension](#desktop-extension-chromium-browsers) |
-| Any computer, including Firefox and Safari | The web app | [Web app on a computer](#web-app-on-a-computer) |
+| Desktop Firefox | The Firefox add-on | [Firefox](#firefox-extension) |
+| Any computer, including Safari | The web app | [Web app on a computer](#web-app-on-a-computer) |
 | Android phone or tablet | The web app, added to your home screen | [Android](#android) |
 | iPhone or iPad | The web app, added to your home screen | [iPhone and iPad](#iphone-and-ipad) |
 
@@ -30,8 +32,8 @@ library. To share books, progress and highlights between devices, turn on [Sync]
 
 ## Desktop extension (Chromium browsers)
 
-Works in Google Chrome, Microsoft Edge, Brave, Opera, Vivaldi and Arc. It does **not** work in Firefox or Safari
-(use the [web app](#web-app-on-a-computer) there).
+Works in Google Chrome, Microsoft Edge, Brave, Opera, Vivaldi and Arc. It does **not** run in Firefox (use the [Firefox add-on](#firefox-extension)) or Safari
+(use the [web app](#web-app-on-a-computer)).
 
 ### Step 1: get the files
 
@@ -119,8 +121,66 @@ extension. Export a backup first (**... menu > Export library data**) if you wan
 
 ---
 
-## Web app on a computer
+## Firefox extension
 
+Firefox does not run the Chromium package, so Folio has a separate Firefox build with the same features.
+It needs **Firefox 128 or newer** on a computer.
+
+**Download:** https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-firefox.zip
+(the same file is also attached as `Folio-firefox.xpi`; an .xpi is just a zip with another name)
+
+Firefox only keeps add-ons that Mozilla has signed, and Folio is not listed on addons.mozilla.org yet. Pick the
+option that fits you:
+
+### Option 1: try it now (temporary, any Firefox)
+1. Download `Folio-firefox.zip` and extract it (right-click > **Extract All** on Windows, double-click on Mac).
+2. In Firefox, open `about:debugging#/runtime/this-firefox`.
+3. Click **Load Temporary Add-on...** and select the file `manifest.json` inside the extracted folder.
+4. Click the puzzle-piece icon in the toolbar to find **Folio** and pin it. Click it to open your library.
+
+Firefox removes temporary add-ons when it closes, so repeat steps 2 and 3 after each restart. Export a backup
+first (**... menu > Export library data**) if your library matters.
+
+### Option 2: permanent, unsigned (Firefox Developer Edition, Nightly, ESR or Unbranded)
+These editions allow add-ons that Mozilla has not signed. Regular Firefox does not.
+1. Open `about:config` and set `xpinstall.signatures.required` to `false`.
+2. Open `about:addons`, click the gear icon, choose **Install Add-on From File...** and select
+   `Folio-firefox.xpi` (or the zip).
+
+### Option 3: permanent in regular Firefox (signed by Mozilla)
+Mozilla signs add-ons for free, even ones you only distribute yourself:
+1. Make a free account at https://addons.mozilla.org/developers/ .
+2. Choose **Submit a New Add-on**, then **On your own** (unlisted).
+3. Upload `Folio-firefox.zip`. Mozilla checks it automatically and returns a signed `.xpi`, usually within minutes.
+4. Open the signed `.xpi` in Firefox to install it. It survives restarts.
+
+You repeat step 3 for each new version, because Firefox cannot update unlisted add-ons for you.
+
+### Firefox on Android
+Firefox for Android only installs add-ons from Mozilla's approved list, so use the
+[web app](#android) instead: open https://etrntyy.github.io/FolioReader/ and choose menu > **Install**.
+
+### Notes for the Firefox add-on
+- **Updates:** Firefox cannot replace an installed add-on's files by itself, so on the **About & updates** page the
+  button becomes **Download**. Install the new file the same way you installed this one.
+- **Folder sync:** the "folder on this computer" sync option is hidden, because Firefox cannot write to folders you
+  pick. The cloud and server options (Google Drive, Dropbox, OneDrive, Nextcloud, WebDAV) work as usual.
+- **Permissions:** Firefox asks you to allow Folio to contact your sync provider the first time you use it.
+- **Uninstall:** open `about:addons`, find Folio and choose **Remove**. This also deletes the books the add-on stores.
+
+### Building the Firefox package yourself
+```powershell
+git clone https://github.com/etrntyy/FolioReader.git
+cd FolioReader
+powershell -ExecutionPolicy Bypass -File scripts\build-firefox.ps1
+```
+This writes `dist/Folio-firefox.zip` and `dist/Folio-firefox.xpi`. (Without PowerShell: copy
+`manifest.firefox.json` over `manifest.json` in a copy of the folder, drop `sw.js`, `oauth.html`, `index.html` and
+`manifest.webmanifest`, and zip the rest with forward-slash paths.)
+
+---
+
+## Web app on a computer
 Use this on Firefox or Safari, or if you prefer not to load an extension. It works in any modern browser.
 
 1. Open **https://etrntyy.github.io/FolioReader/** (direct link: [open Folio](https://etrntyy.github.io/FolioReader/))
@@ -190,6 +250,7 @@ the backup automatically.
 |---|---|
 | Web app and phone app | Automatically. Press **Update** under About & updates if you see the badge. |
 | Chromium extension | **About & updates > Update** (pick the Folio folder once), or replace the files by hand and reload the extension. |
+| Firefox add-on | **About & updates > Download**, then install the new file the same way as before. |
 
 Update checks only fetch the version number from this repository, at most every 12 hours, and can be turned off
 on the About & updates page.

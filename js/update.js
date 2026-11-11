@@ -16,6 +16,10 @@ export const BRANCH = 'main';
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/`;
 export const isExtension = !!globalThis.chrome?.runtime?.id;
 export const repoUrl = `https://github.com/${REPO}`;
+export const downloadUrl = `https://github.com/${REPO}/releases/latest`;
+// An unpacked extension can only update itself where the browser lets us write to its folder (Chromium).
+// Firefox cannot, so there the Update button just opens the download page.
+export const canSelfUpdate = !isExtension || typeof showDirectoryPicker === 'function';
 
 const KEY = 'sw-update';
 export const getCfg = () => ({ auto: true, checkedAt: 0, latest: '', error: '', ...lsGet(KEY, {}) });

@@ -23,6 +23,8 @@ function syncBadge() {
 function syncDialog() { S.filter = 'sync'; lsSet('sw-filter', S.filter); S.sel.clear(); render(); }
 function syncPanel(host) {
   const d = document.createElement('div'); d.className = 'syncwrap'; host.replaceChildren(d);
+  // select the whole redirect address when focused (done here, not as an inline handler, which extensions block)
+  d.addEventListener('focusin', (e) => { if (e.target.classList?.contains('sy-redirect')) e.target.select(); });
   const paint = () => {
     const cfg = sync.getCfg(), P = sync.PROVIDERS, cur = P[cfg.provider];
     const opts = Object.values(P).filter((p) => p.supported());
@@ -33,7 +35,7 @@ function syncPanel(host) {
     } else if (cur?.kind === 'oauth') {
       body = `<label>${cur.label} client ID</label><input type="text" id="sy-cid" value="${esc(cfg.ids[cur.id] || '')}" placeholder="Paste the client / app ID you registered" spellcheck="false">
         <p class="sy-note">${esc(cur.hint)}</p>
-        <label>Redirect URI to register</label><input type="text" readonly value="${esc(cur.redirect())}" onfocus="this.select()">`;
+        <label>Redirect URI to register</label><input type="text" readonly class="sy-redirect" value="${esc(cur.redirect())}">`;
     } else if (cur?.kind === 'nextcloud') {
       body = `<label>Nextcloud address</label><input type="text" id="sy-ncs" value="${esc(cfg.nc.server)}" placeholder="https://cloud.example.com" spellcheck="false">
         <div class="two"><div><label>User name</label><input type="text" id="sy-ncu" value="${esc(cfg.nc.user)}" autocomplete="off"></div><div><label>App password</label><input type="password" id="sy-ncp" value="${esc(cfg.nc.pass)}" autocomplete="off"></div></div>
@@ -262,13 +264,16 @@ function renderAbout() {
         <div class="ab-row"><span>Last checked</span><b>${ago(c.checkedAt)}</b></div>
         <div class="ab-status ${c.error ? 'err' : avail ? 'new' : ''}">${esc(busy || (c.error ? c.error : avail ? `Version ${c.latest} is available.` : c.latest ? 'You are up to date.' : 'Not checked yet.'))}</div>
         <div class="acts">
-          ${avail ? `<button class="primary" data-act="update" ${busy ? 'disabled' : ''}>Update to ${esc(c.latest)}</button>` : ''}
+          ${avail && upd.canSelfUpdate ? `<button class="primary" data-act="update" ${busy ? 'disabled' : ''}>Update to ${esc(c.latest)}</button>` : ''}
+          ${avail && !upd.canSelfUpdate ? `<a class="abtn" href="${upd.downloadUrl}" target="_blank" rel="noopener noreferrer">Download ${esc(c.latest)}</a>` : ''}
           <button data-act="check" ${busy ? 'disabled' : ''}>Check now</button>
           <a class="ab-link" href="${upd.repoUrl}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         </div>
       </div>
       <label class="sy-check"><input type="checkbox" id="up-auto" ${c.auto ? 'checked' : ''}> Check for updates automatically (at most every 12 hours)</label>
-      <p class="sy-note">${upd.isExtension
+      <p class="sy-note">${upd.isExtension && !upd.canSelfUpdate
+        ? `This browser cannot replace an installed add-on's files by itself. When a new version is available, use Download to get it and install it the same way you installed this one (see the installation guide). Your books and settings are not touched.`
+        : upd.isExtension
         ? `Updating downloads the latest files from <b>github.com/${esc(upd.REPO)}</b> into the folder you loaded Folio from, then reloads the extension. The first time, you pick that folder once. Your books and settings are not touched.`
         : `Updating refreshes Folio's offline copy and reloads the page. Your books and settings are not touched.`}
         Only the version number is fetched when checking; nothing about you or your library is sent. Updating runs whatever is on that repository's main branch, so only use a repository you trust.</p>`;

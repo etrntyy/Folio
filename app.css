@@ -398,3 +398,8 @@ input[type=color] { border: none; background: none; padding: 0; }
 .nav-h { align-items: center; }
 .nav-h > button svg { width: 12px; height: 12px; stroke-width: 2; margin: 0 auto; }
 .nav-h > button { display: flex !important; align-items: center; justify-content: center; line-height: 1; height: 16px; }
+
+/* Download link styled as a primary button (browsers that cannot self-update) */
+.abtn { display: inline-block; padding: 5px 14px; border-radius: 7px; background: var(--accent); color: var(--accent-fg); font-weight: 500; text-decoration: none; }
+.abtn:hover { filter: brightness(1.08); }
+.sy-redirect { cursor: text; }
