@@ -1,7 +1,18 @@
 # Installing Folio
 
-Folio runs in two ways. Pick the one that fits your device.
+[Back to the README](README.md)
 
+## Quick links
+
+| What | Link |
+|---|---|
+| **Download the desktop extension (ZIP)** | https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip |
+| **Open the web app** (phones, tablets, any browser) | https://etrntyy.github.io/FolioReader/ |
+| All releases and release notes | https://github.com/etrntyy/FolioReader/releases |
+| Source code (ZIP) | https://github.com/etrntyy/FolioReader/archive/refs/heads/main.zip |
+| Project page and README | https://github.com/etrntyy/FolioReader |
+
+Folio runs in two ways. Pick the one that fits your device.
 | You want to use Folio on... | Use this | Section |
 |---|---|---|
 | Desktop Chrome, Edge, Brave, Opera, Vivaldi, Arc (any Chromium browser) | The browser extension | [Desktop extension](#desktop-extension-chromium-browsers) |
@@ -27,14 +38,15 @@ Works in Google Chrome, Microsoft Edge, Brave, Opera, Vivaldi and Arc. It does *
 Choose one:
 
 **A. Download the release ZIP (easiest)**
-1. Open https://github.com/etrntyy/FolioReader/releases/latest
-2. Under **Assets**, click **Folio-v1.3.0.zip** (the file name shows the current version).
+1. Click this direct download link: https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip
+   (It always gives the newest version. All releases are listed at https://github.com/etrntyy/FolioReader/releases)
+2. Save the file (about 0.5 MB).
 3. Right-click the downloaded ZIP and **Extract All** (Windows) or double-click it (Mac). Do not open it from inside the ZIP viewer.
 4. Move the extracted folder somewhere permanent, for example `Documents/Folio`. The folder you pick must
    contain a file named `manifest.json` directly inside it.
 
 **B. Without a release: the source ZIP**
-On https://github.com/etrntyy/FolioReader click the green **Code** button, then **Download ZIP**, and extract it.
+Open https://github.com/etrntyy/FolioReader/archive/refs/heads/main.zip to download the latest source, then extract it. (Or open https://github.com/etrntyy/FolioReader, click the green **Code** button, then **Download ZIP**.)
 
 **C. With Git**
 ```bash
@@ -111,7 +123,7 @@ extension. Export a backup first (**... menu > Export library data**) if you wan
 
 Use this on Firefox or Safari, or if you prefer not to load an extension. It works in any modern browser.
 
-1. Open **https://etrntyy.github.io/FolioReader/**
+1. Open **https://etrntyy.github.io/FolioReader/** (direct link: [open Folio](https://etrntyy.github.io/FolioReader/))
 2. Optional: install it as an app so it gets its own window and works offline.
    - **Chrome:** click the install icon at the right end of the address bar, or menu (three dots) >
      **Cast, save and share** > **Install page as app**.
@@ -128,7 +140,7 @@ separate from any extension install.
 
 ## Android
 
-1. Open **https://etrntyy.github.io/FolioReader/** in your browser.
+1. Open **https://etrntyy.github.io/FolioReader/** in your browser (direct link: [open Folio](https://etrntyy.github.io/FolioReader/)).
 2. Add it to your home screen:
    - **Chrome:** menu (three dots) > **Add to Home screen** (or **Install app**) > **Install**.
    - **Samsung Internet:** menu > **Add page to** > **Home screen**.
@@ -144,7 +156,7 @@ turn pages, and long-press a word to highlight.
 
 Use **Safari** (other iOS browsers cannot add web apps to the home screen).
 
-1. Open **https://etrntyy.github.io/FolioReader/** in Safari.
+1. Open **https://etrntyy.github.io/FolioReader/** in Safari (direct link: [open Folio](https://etrntyy.github.io/FolioReader/)).
 2. Tap the **Share** button (square with an arrow).
 3. Scroll down and tap **Add to Home Screen**, then **Add**.
 4. Open Folio from the new home-screen icon, not from Safari.
@@ -181,3 +193,7 @@ the backup automatically.
 
 Update checks only fetch the version number from this repository, at most every 12 hours, and can be turned off
 on the About & updates page.
+
+---
+
+[Back to the README](README.md) | [All releases](https://github.com/etrntyy/FolioReader/releases) | [Open the web app](https://etrntyy.github.io/FolioReader/)
