@@ -1,8 +1,8 @@
 # Folio
 
 An ebook library and reader for **EPUB, PDF and TXT** with a clean, quiet reading design. It runs entirely in your
-browser: a Chromium extension on desktop, and an installable web app (PWA) on phones. No accounts, no server,
-no dependencies to build. Everything is stored privately in your browser unless you turn on sync.
+browser: a Chromium extension on desktop, and an installable web app (PWA) on phones. No accounts, server, or dependencies to build.
+Everything is stored privately in your browser unless you turn on sync.
 
 **Quick links:** [Download the extension (ZIP)](https://github.com/etrntyy/FolioReader/releases/latest/download/Folio-extension.zip) | [Open the web app](https://etrntyy.github.io/FolioReader/) | [Installation guide](INSTALL.md) | [Releases](https://github.com/etrntyy/FolioReader/releases)
 
