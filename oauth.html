@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Signing in…</title></head>
+<body style="font:15px system-ui;padding:24px;color:#555">Signing in…
+<script>
+  // Hands the OAuth result back to the Folio window that opened this pop-up, then closes.
+  try { opener.postMessage({ folioOAuth: true, hash: location.hash }, location.origin); } catch (e) {}
+  setTimeout(function () { window.close(); }, 200);
+</script></body></html>
