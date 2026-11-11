@@ -26,14 +26,17 @@ Works in Google Chrome, Microsoft Edge, Brave, Opera, Vivaldi and Arc. It does *
 
 Choose one:
 
-**A. Download the ZIP (easiest)**
-1. Open https://github.com/etrntyy/FolioReader
-2. Click the green **Code** button, then **Download ZIP**.
-3. Right-click the downloaded ZIP and **Extract All** (Windows) or double-click it (Mac).
+**A. Download the release ZIP (easiest)**
+1. Open https://github.com/etrntyy/FolioReader/releases/latest
+2. Under **Assets**, click **Folio-v1.3.0.zip** (the file name shows the current version).
+3. Right-click the downloaded ZIP and **Extract All** (Windows) or double-click it (Mac). Do not open it from inside the ZIP viewer.
 4. Move the extracted folder somewhere permanent, for example `Documents/Folio`. The folder you pick must
    contain a file named `manifest.json` directly inside it.
 
-**B. With Git**
+**B. Without a release: the source ZIP**
+On https://github.com/etrntyy/FolioReader click the green **Code** button, then **Download ZIP**, and extract it.
+
+**C. With Git**
 ```bash
 git clone https://github.com/etrntyy/FolioReader.git
 ```

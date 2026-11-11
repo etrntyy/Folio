@@ -1,4 +1,6 @@
-// Minimal ZIP reader using the browser's native DecompressionStream (no dependencies).
+// Minimal ZIP reader: native DecompressionStream when available, built-in inflate otherwise (no dependencies).
+import { inflateRaw } from './inflate.js';
+export const zipOptions = { forceFallback: false }; // set true to exercise the JavaScript inflate in tests
 export class Zip {
   constructor(buf) {
     this.buf = buf;
@@ -48,8 +50,15 @@ export class Zip {
     const data = new Uint8Array(this.buf, start, e.csize);
     if (e.method === 0) return data.slice();
     if (e.method === 8) {
-      const stream = new Blob([data]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-      return new Uint8Array(await new Response(stream).arrayBuffer());
+      // Prefer the browser's native decompressor; fall back to the built-in one if it is missing
+      // (iOS before 16.4) or fails on this file.
+      if (!zipOptions.forceFallback && typeof DecompressionStream === 'function') {
+        try {
+          const stream = new Blob([data]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+          return new Uint8Array(await new Response(stream).arrayBuffer());
+        } catch { /* fall through to the JavaScript inflate */ }
+      }
+      return inflateRaw(data, e.usize);
     }
     throw new Error('Unsupported compression method ' + e.method);
   }

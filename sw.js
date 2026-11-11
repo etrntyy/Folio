@@ -1,7 +1,7 @@
 // Folio service worker: offline app shell (books themselves live in IndexedDB).
-const V = 'folio-v20';
+const V = 'folio-v22';
 const SHELL = ['app.html', 'app.css', 'manifest.webmanifest', 'icons/48.png', 'icons/192.png', 'icons/512.png',
-  'js/app.js', 'js/ui.js', 'js/db.js', 'js/epub.js', 'js/zip.js', 'js/reader.js', 'js/pdf.js', 'js/sync.js', 'js/update.js', 'oauth.html',
+  'js/app.js', 'js/ui.js', 'js/db.js', 'js/epub.js', 'js/zip.js', 'js/inflate.js', 'js/reader.js', 'js/pdf.js', 'js/sync.js', 'js/update.js', 'oauth.html',
   'lib/pdf.min.js', 'lib/pdf.worker.min.js'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => {

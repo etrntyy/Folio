@@ -39,7 +39,7 @@ Full, step-by-step guides for every browser and device are in **[INSTALL.md](INS
 
 | Device | How |
 |---|---|
-| Chrome, Edge, Brave, Opera, Vivaldi, Arc (desktop) | Download this repository, open the browser's extensions page, turn on **Developer mode**, click **Load unpacked** and pick the folder. [Details](INSTALL.md#desktop-extension-chromium-browsers) |
+| Chrome, Edge, Brave, Opera, Vivaldi, Arc (desktop) | Download the [latest release ZIP](https://github.com/etrntyy/FolioReader/releases/latest), extract it, open the browser's extensions page, turn on **Developer mode**, click **Load unpacked** and pick the folder. [Details](INSTALL.md#desktop-extension-chromium-browsers) |
 | Firefox or Safari (desktop), or no extension wanted | Open **https://etrntyy.github.io/FolioReader/** and optionally install it as an app. [Details](INSTALL.md#web-app-on-a-computer) |
 | Android | Open the web app address in Chrome, then menu > **Add to Home screen**. [Details](INSTALL.md#android) |
 | iPhone / iPad | Open the web app address in Safari, then Share > **Add to Home Screen**. [Details](INSTALL.md#iphone-and-ipad) |
